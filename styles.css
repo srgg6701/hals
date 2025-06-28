@@ -1,0 +1,12 @@
+/*@tailwind base;*/
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: Tahoma, Arial, serif;
+}
+main {
+  text-align: center;
+  margin: auto;
+  max-width: 900px;
+  width: 100%;
+}

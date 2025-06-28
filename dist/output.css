@@ -1,0 +1,20 @@
+/*@tailwind base;*/
+
+.inline-block {
+  display: inline-block;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+body {
+  font-family: Tahoma, Arial, serif;
+}
+
+main {
+  text-align: center;
+  margin: auto;
+  max-width: 900px;
+  width: 100%;
+}
