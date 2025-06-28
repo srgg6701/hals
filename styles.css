@@ -1,12 +1,37 @@
-/*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
+
 body {
-  font-family: Tahoma, Arial, serif;
+  font-family: Aptos, Tahoma, Arial, serif;
 }
+
 main {
   text-align: center;
   margin: auto;
   max-width: 900px;
   width: 100%;
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-purple-native {
+  --tw-text-opacity: 1;
+  color: rgb(160 43 147);
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@font-face {
+  font-family: 'Aptos';
+  src: url('./fonts/Aptos.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

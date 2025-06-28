@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./dist/output.css" rel="stylesheet">
-        <title>HALS: Sensorimotor AI systems</title>
-    </head>
-    <body>
-        <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <title>HALS: Sensorimotor AI systems</title>
+  </head>
+  <body>
+    <main class="w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <!-- Левый верхний -->
+        <div class="flex flex-col items-center justify-center text-center">
+          <img src="image/logo-combined.png" style="width: 57%;" alt="HALS Logo" class="w-24 mb-2" />
+        </div>
+
+        <!-- Правый верхний -->
+        <div class="flex items-center justify-center">
+          <img
+            src="image/city.jpg"
+            alt="City Visualization"
+            class="max-w-full h-auto"
+          />
+        </div>
+
+        <!-- Левый нижний -->
+        <div class="flex items-center justify-center">
+          <img
+            src="image/sonny.jpg"
+            alt="Robot Face"
+            class="max-w-full h-auto"
+          />
+        </div>
+
+        <!-- Правый нижний -->
+        <div class="flex items-center justify-center text-center">
+          <p class="text-2xl text-purple-native leading-snug">
+            Sensorimotor AI <span class="font-bold">BrainWare</span>:<br />
+            From Autonomous Devices<br />
+            to Large-Scale <span class="font-bold">AGI</span> Systems
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- <main>
             <figure class="inline-block">
                 <h1 style="text-align: right; margin-bottom: 60px; font-size: 4rem; margin-right: -7rem;">Hello, World!</h1>
                 <img class="max-w-full" src="image/sonny.jpg">
             </figure>
-        </main>
-    </body>
+        </main> -->
+  </body>
 </html>
