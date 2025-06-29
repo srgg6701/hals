@@ -53,6 +53,10 @@ body {
   font-family: Aptos, Tahoma, Arial, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   text-align: center;
   margin: auto;
@@ -84,7 +88,7 @@ p {
 }
 
 hr.separator {
-  border-top: 1px solid var(--color-blue-grayish);
+  border-top: 1px solid #bbb;
   margin: 3rem auto;
   opacity: 0.65;
 }
