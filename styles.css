@@ -108,15 +108,21 @@ hr.separator {
   opacity: 0.65;
 }
 
-ul.marked-list {
+.marked-list {
   padding: 0 60px;
 }
 
-ul.marked-list li {
-  list-style-type: disc;
+.marked-list li {
+  display: list-item;
   margin-bottom: 0.5rem;
   text-align: left;
-  display: list-item;
+}
+ul.marked-list li {
+  list-style-type: disc;
+}
+
+ol.marked-list li {
+  list-style-type: decimal;
 }
 
 .text-blue-grayish {

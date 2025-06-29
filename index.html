@@ -261,7 +261,7 @@
         <span style="color: darkorange">Long-Term Issues</span>
       </h2>
       <div
-        class="flex items-center justify-center text-center gap-4 items-baseline risks"
+        class="flex items-center justify-center text-center gap-4 items-baseline mt-12 risks"
       >
         <div>
           <img src="images/risks-tech-failure.png" alt="Technical Failures" />
@@ -404,6 +404,40 @@
         </div>
       </div>
 
+      <h2>How it Will Look in a Demo</h2>
+      <div
+        class="flex flex-col sm:flex-row sm:items-start sm:justify-center"
+        style="gap: 38px"
+      >
+        <div style="max-width: 180px">
+          <img
+            style="max-width: 100%"
+            src="images/model-actual-reality.png"
+            alt=""
+          />
+        </div>
+        <div style="max-width: 398px">
+          <img style="max-width: 100%" src="images/model-stages.png" alt="" />
+        </div>
+      </div>
+      <h3 style="margin: 3rem auto 1rem">Stages of Demo</h3>
+      <ol class="marked-list">
+        <li>An agent appears on the scene.</li>
+        <li>
+          The state of its memory can be observed, which should display a model
+          of its environment. At first, the memory is empty (“tabula rasa”).
+        </li>
+        <li>
+          As the environment is investigated, objects present in this
+          environment begin to appear in the agent’s memory.
+        </li>
+        <li>
+          The agent approaches a “reactive” object. When the distance between
+          them decreases to a certain point, the latter reacts to this approach
+          (runs away) and gets assigned special attributes and corresponding
+          policies for safe interaction with it in the future.
+        </li>
+      </ol>
       <hr class="separator" />
 
       <h2>Theoretical Basis and Implementation Means</h2>
@@ -425,7 +459,12 @@
                 <span class="text-black">(Jeff Hawkins)</span>
               </p>
               <p class="whitespace-nowrap">
-                <span class="cursor-pointer" onclick="location.href='https://thousandbrainsproject.readme.io/docs'">Platform for Designing Sensorimotor AI</span> <a href="https://numenta.com">(Numenta)</a>
+                <span
+                  class="cursor-pointer"
+                  onclick="location.href='https://thousandbrainsproject.readme.io/docs'"
+                  >Platform for Designing Sensorimotor AI</span
+                >
+                <a href="https://numenta.com">(Numenta)</a>
               </p>
             </div>
           </div>
@@ -451,16 +490,276 @@
 
       <hr class="separator" />
 
-      <h1 id="how-it-appears">4. How it Appears</h1>
+      <h1 id="how-it-appears">4. How it Appears in the Physical Environment</h1>
+
+      <h3 class="slim">
+        HALS vs Conventional Robot: Key Differences in Applied Strategies
+      </h3>
       <p>
-        HALS is designed to be user-friendly and intuitive. Its interface is
-        visually appealing, with a clean layout and easy navigation. The system
-        provides real-time feedback and insights, making it accessible for users
-        of all technical levels.
+        The best way to understand what a device (such as a robot) can or cannot
+        do is to compare its performance with that of another device developed
+        on different principles. Below is a test run of a typical task for an
+        autonomous robot: locating a target object in an industrial warehouse,
+        specifically, a box marked with a red label. The location of this object
+        is not known in advance; it may be obstructed by other items, or the red
+        mark may be on a side not visible from a typical angle. Performance on
+        such tasks can be considered a reliable indicator of the intelligence of
+        an autonomous device—or, more broadly, of the presence of cognition.
       </p>
-      <h1 id="contacts">Contacts</h1>
-      <p>For more information about HALS, please contact us at:</p>
-      <p>Srgg: <a href="mailto:xyz@gmail.com">email</a></p>
+      <p>
+        We describe strategies for performing this task using a robot controlled
+        by an AI operating on pre-trained models (a Conditional Robot, or CR),
+        and HALS, which builds an internal model of its environment in real
+        time.
+      </p>
+
+      <p class="font-bold">Several key factors:</p>
+
+      <h3>1. Approaches to Location Map Construction and Use CR using SLAM:</h3>
+
+      <p>
+        If a CR employs SLAM (Simultaneous Localization and Mapping) to
+        construct maps, those maps are usually geometric. It can navigate all
+        premises and register constraints. However, to “view all objects from
+        all angles” for the semantic identification of a mark, it must
+        constantly run its object detection module on camera data.
+      </p>
+
+      <p class="font-bold">Effectiveness of Detection:</p>
+
+      <p>The CR’s perception module (trained on datasets) may be:</p>
+      <ul class="marked-list">
+        <li>
+          <p>
+            <strong>Not robust to angles of view:</strong>
+            The effectiveness of detecting objects (especially small details
+            like tags) highly depends on the angle, lighting, and partial
+            occlusion. Even if it “looks” from all sides, the detector may fail
+            to identify a mark if it is seen from an unusual angle or partially
+            blocked.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Computationally expensive:</strong>
+            Continuously analyzing the video stream with all possible angles and
+            searching for a specific mark imposes enormous computational load.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Lack of structural object understanding:</strong>
+            A CR does not build a 3D model of the object “on the fly” as HALS
+            does through reference frames. It merely attempts to “find” a known
+            template (mark) in 2D images or 3D data. If the mark is on a box
+            edge that is currently hidden or partially blocked, the CR won’t
+            “decide” to go around the object to see other edges unless
+            explicitly instructed by a specific search strategy.
+          </p>
+        </li>
+      </ul>
+
+      <h3>2. Exploration and Search Strategy</h3>
+      <div
+        class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
+      >
+        <p class="flex items-start gap-3 max-w-md">
+          <strong>CR:</strong> Its exploration strategy is likely either
+          pre-programmed (e.g., perimeter sweep followed by a specific route) or
+          based on space coverage (to build a complete geometric map).
+          Purposeful search for visual marks on all surfaces of all objects is a
+          highly complex task when it comes to programming effective CR
+          strategies. The CR may simply “scan” visible surfaces, and if the mark
+          is not in a good angle, it will miss it. To ensure that the CR
+          accesses all surfaces of all objects, an exceptionally complex
+          movement and inspection strategy would be required.
+        </p>
+        <p class="flex items-start gap-3 max-w-md">
+          <strong>HALS:</strong> Its drive to build a coherent model principle
+          means that it doesn’t merely cover space but attempts to understand
+          the structure of each object and the spatial arrangement of all
+          detected entities. When it builds an object model through reference
+          frames, it gradually gathers information about its various sides and
+          surfaces during the exploration process. Detecting a marked object
+          becomes a part of building the full model.
+        </p>
+      </div>
+
+      <h3>3. Processing Incomplete Information and Uncertainty</h3>
+      <div
+        class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
+      >
+        <p class="flex items-start gap-3 max-w-md">
+          <strong>CR:</strong> If an object is partially obscured by items that
+          are poorly recognized by CR detectors, these items may be treated as
+          “noise” or merged with the background. The CR may fail to separate the
+          object from these interfering elements to analyze it in detail.
+        </p>
+        <p class="flex items-start gap-3 max-w-md">
+          <strong>HALS:</strong> By building the model on-the-fly, HALS tries to
+          analyze all observable entities in its perception. It models all
+          objects within sensor range, enabling semantic interpretation and
+          representing the object even when it is partially occluded by others.
+        </p>
+      </div>
+
+      <h3>4. Lack of Intentionality</h3>
+      <div
+        class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
+      >
+        <p class="flex items-start gap-3 max-w-md">
+          <strong>CR:</strong> Performs tasks based on predefined algorithms. It
+          lacks an internal “drive to understand”—that is, a cognitive mechanism
+          operating with general representations of semantic object boundaries.
+        </p>
+        <p class="flex items-start gap-3 max-w-md">
+          <strong>HALS:</strong> Constructs a coherent model of reality as its
+          higher-order goal. In this sense, the agent can be described as
+          intentional. The process of understanding is continuous, iteratively
+          refining its perception of the surrounding environment and the causes
+          within it.
+        </p>
+      </div>
+
+      <h3>
+        5. Why a CR Theoretically Can Solve This Problem but Practically the
+        Solution Is Too Expensive and Unreliable
+      </h3>
+      <p>
+        Theoretically, it is possible to program a CR to pursue its goal so
+        persistently that the behavior borders on “maniacal,” eventually leading
+        to a formal solution. For example, by using:
+      </p>
+      <ul class="marked-list">
+        <li>
+          <p>
+            <strong>Super-detailed scanning:</strong>
+            Instruct the CR to methodically scan every inch of the warehouse,
+            rotating cameras and sensors in all directions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Multiple detectors:</strong>
+            Apply a variety of detectors trained on tags in different
+            conditions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Heuristics and brute-force:</strong>
+            If something appears on a non-activated object but the mark is not
+            visible, program the CR to perform additional maneuvers around that
+            object.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Repeated passes:</strong>
+            If no detection is made during the first attempt, restart with
+            different parameters.
+          </p>
+        </li>
+      </ul>
+      <p>However, such an approach is questionable due to:</p>
+      <h3>6. Enormous Resource and Time Costs for the Agent</h3>
+      <ul class="marked-list">
+        <li>
+          <p>
+            <strong>Computational resources:</strong>
+            Such a “maniacal” search involving video stream analysis, detector
+            usage, and redundant trajectory planning would be extremely
+            resource-heavy.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Execution time:</strong>
+            Searching “at any cost” may take excessive time, making it
+            impractical where speed matters.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Energy consumption (in mobile robots):</strong>
+            Prolonged redundant operations lead to high energy usage.
+          </p>
+        </li>
+      </ul>
+      <h3>
+        7. Fragility, Rigidity, and Complexity of Development and Maintenance
+      </h3>
+      <p>
+        Designing and debugging such a “maniacal” search strategy for CR is an
+        extremely difficult engineering challenge. Maintaining and updating this
+        system would be a nightmare, since such a strategy must be
+        custom-developed for a specific task configuration. Minor changes in the
+        environment (e.g., lighting, presence of atypical objects, target shape
+        variations, or just a change in the mark color) may require a complete
+        reprogramming or recalibration of the entire strategy.
+      </p>
+      <h3>8. Harmful Side Effects of “Maniacal” Behavior</h3>
+      <p>
+        In the real world, such a robot “obsessed” with finding a mark “at any
+        cost” may cause problems: block pathways, inefficiently use space, or
+        act unpredictably toward other agents (humans or robots).
+      </p>
+      <h3>9. Conclusion</h3>
+      <p>
+        Despite being aware of the target object, CR faces fundamental
+        limitations in locating it, rooted in the rigidity of its search
+        strategy. Its ability to “see” the red mark depends on the quality of
+        pre-trained detectors and its software’s computational capabilities, but
+        not on any actual understanding of the surrounding world. Solving a task
+        that is trivial for an agent capable of cognition requires enormous
+        resources from a CR — and even with such resources, a reliable outcome
+        remains uncertain. HALS addresses this problem in a fundamentally
+        different way. Its sensorimotor approach is aimed at actively
+        constructing a coherent 3D model of its environment, in which each
+        object possesses its own semantics, including its relations to other
+        objects. HALS’s search strategy is grounded in an understanding of the
+        environment’s topology: it recognizes the spatial arrangement of
+        objects, formulates hypotheses about their properties, and tests them.
+        This approach grants HALS a categorical advantage over current
+        mainstream methods in solving a wide range of tasks — both within
+        robotics and beyond.
+      </p>
+
+      <hr class="separator" />
+
+      <h1 id="contacts" class="text-lilac" style="margin: 0 auto 2.5rem;">Contacts</h1>
+
+      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-center">
+      <p style="max-width: 260px; margin: 0;">
+        For more information on HALS or the pitch deck, please contact us at:
+        <a
+          href="mailto:&#115;&#114;&#103;&#103;&#54;&#55;&#48;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
+        >
+          &#115;&#114;&#103;&#103;&#54;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
+        </a>
+      </p>
+      <div style="max-width: 330px; vertical-align: top;">
+          <img style="max-height: 146px;" src="images/founder-srgg.png" alt="" />
+          <p>
+            <strong style="display: inline-block; text-align: center; width: 100%;">Sergei Klevtsov</strong>
+            <p style="padding-left: 3.4rem;">
+            Founder, Project Lead.
+            <br />
+            AI Researcher, System Architect. Over 15 years of Research and IT expertise.</p>
+          </p>
+        </div>
+        <div style="max-width: 330px; vertical-align: top;">
+          <img style="max-height: 146px;" src="images/founder-sergii.png" alt="" />
+          <p>
+            <strong style="display: inline-block; text-align: center; width: 100%;">Sergii Korobko</strong>
+            <p style="padding-left: 3.7rem;">
+              Co-founder, Technical Principal.
+            <br />
+            Software Architect. Over 20 years of IT expertise.
+            </p>
+          </p>
+        </div>
+      </div>
     </main>
   </body>
 </html>
