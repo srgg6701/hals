@@ -41,15 +41,16 @@
 
       .common-problems {
         justify-content: space-evenly;
-        padding-bottom: 3.5rem;
+        padding-bottom: 3rem;
       }
 
       .common-problems img {
         margin-bottom: 1rem;
         max-height: 85px;
       }
-      .common-problems div {
+      .common-problems > div {
         font-size: 1.2rem;
+        width: 33%;
       }
 
       .experts {
@@ -77,9 +78,20 @@
         color: var(--color-deep-purple);
         font-weight: 900;
       }
-      
+
       .risks div {
         width: 25%;
+      }
+
+      .risks img {
+        max-height: 92px;
+      }
+
+      .arrow-transition {
+        color: var(--color-deep-purple);
+      }
+      .approach-transition img {
+        max-width: 100%;
       }
     </style>
   </head>
@@ -183,7 +195,8 @@
           <img src="images/expert-yan-lecun.png" alt="" />
           <p>
             <strong>Yan LeCun:</strong> [LLMs] … don’t understand the physical
-            world, and <b>…cannot reason</b> in any reasonable definition of the term.
+            world, and <b>…cannot reason</b> in any reasonable definition of the
+            term.
           </p>
         </div>
         <div class="experts">
@@ -207,13 +220,16 @@
         </div>
         <div>
           <img src="images/problem-datasets.jpg" alt="Huge Datasets" />
-          <div>Huge Pretrained Models</div>
+          <div>
+            Demand of Huge<br />
+            Pretrained Models
+          </div>
         </div>
       </div>
       <div class="flex common-problems gap-4">
         <div>
           <img src="images/problem-costs.png" alt="Pretraining Costs" />
-          <div>Enormous Model Training Cost</div>
+          <div>Enormous Model<br />Training Cost</div>
         </div>
         <div>
           <img src="images/problem-blackbox.png" alt="Black Box" />
@@ -221,48 +237,105 @@
         </div>
         <div>
           <img src="images/problem-no-alignment.png" alt="Alignment Problem" />
-          <div>No Consistent Approach to Alignment</div>
+          <div>No Consistent Approach<br />to Alignment</div>
         </div>
       </div>
-      <h2 class="mt-0 mb-10"><span style="color: #f00">Risks</span> and <span style="color: darkorange">Long-Term Issues</span></h2>
-      <div class="flex items-center justify-center text-center gap-4 items-baseline risks">
+      <h2 class="mt-0 mb-10">
+        <span style="color: #f00">Risks</span> and
+        <span style="color: darkorange">Long-Term Issues</span>
+      </h2>
+      <div
+        class="flex items-center justify-center text-center gap-4 items-baseline risks"
+      >
         <div>
           <img src="images/risks-tech-failure.png" alt="Technical Failures" />
-          <p><strong>Technical Failurs</strong>
+          <p>
+            <strong>Technical Failurs</strong>
             — the risk of AI systems failing in critical situations, leading to
             potential harm or loss.
           </p>
         </div>
         <div>
           <img src="images/risks-investments-loss.png" alt="Investment Loss" />
-          <p><strong>Investment Loss</strong>
+          <p>
+            <strong>Investment Loss</strong>
             — the risk of significant financial losses due to the failure of AI
             systems to deliver expected results or performance.
           </p>
         </div>
         <div>
-          <img src="images/risks-distracting.png" alt="Distracting from alternative approaches" />
-          <p><strong>Distracting from alternative approaches</strong>
+          <img
+            src="images/risks-distracting.png"
+            alt="Distracting from alternative approaches"
+          />
+          <p>
+            <strong>Distracting from alternative approaches</strong>
             — the risk of focusing too much on current AI trends, potentially
             overlooking more effective or innovative solutions.
           </p>
         </div>
         <div>
-          <img src="images/risks-epistemological-corruption.png" alt="Epistemological Corruption" />
-          <p><strong>Epistemological Corruption</strong>
+          <img
+            src="images/risks-epistemological-corruption.png"
+            alt="Epistemological Corruption"
+          />
+          <p>
+            <strong>Epistemological Corruption</strong>
             — the risk of AI systems distorting or misrepresenting knowledge,
             leading to misinformation and misunderstanding.
           </p>
         </div>
       </div>
+
       <hr class="separator" />
-      <h1 id="the-solution">The Solution</h1>
-      <p>
-        HALS (Human-friendly Autonomous Learning Systems) is a revolutionary
-        approach to AI that mimics human learning processes. By integrating
-        sensorimotor experiences, HALS enables machines to learn and adapt in
-        real-time, just like humans do.
-      </p>
+
+      <h1 id="the-solution">
+        <span class="text-purple-native">The Solution</span>
+        <span class="text-deep-turquoise">Through Paradigm Change</span>
+      </h1>
+      <h3 class="slim text-lilac" style="margin-bottom: 3rem">
+        Transition from
+        <span class="text-grey">static pre-training models</span> to
+        <span class="text-light-purple">internal self-learning model</span> that
+        reflects the spatial-semantic structure of the real world
+      </h3>
+      <div
+        class="flex flex-wrap justify-center items-center text-center gap-4 approach-transition"
+      >
+        <img src="images/dataset.png" width="406.8" alt="" />
+        <img src="images/arrow.png" width="101.13" alt="" />
+        <img src="images/self-learning.png" width="420.86" alt="" />
+      </div>
+      <h3 class="slim" style="margin-top: 3rem">This approach ensures:</h3>
+      <ul class="marked-list">
+        <li>
+          Elimination of the need for resource-hungry external datasets
+          <span class="arrow-transition">No Enormous External Costs</span>
+        </li>
+        <li>
+          Dynamic adaptation to changes in the environment
+          <span class="arrow-transition">No Data Fragility</span>
+        </li>
+        <li>
+          Semantic analysis of events and objects based on causality
+          <span class="arrow-transition">No Hallucinations</span>
+        </li>
+        <li>
+          Continuous accumulation of knowledge about the world
+          <span class="arrow-transition">No Epistemological Corruption</span>
+        </li>
+        <li>
+          Transparency of the intentions and actions of AI ​​agent
+          <span class="arrow-transition">No Black Box Processing Issue</span>
+        </li>
+        <li>
+          ​​Conditions for implementing alignment
+          <span class="arrow-transition">No Contradiction to Human Values</span>
+        </li>
+      </ul>
+
+      <hr class="separator" />
+
       <h1 id="how-it-works">How it Works</h1>
       <p>
         HALS combines advanced machine learning algorithms with a unique

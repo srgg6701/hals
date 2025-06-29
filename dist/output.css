@@ -1,49 +1,25 @@
+.static {
+  position: static;
+}
+
 .mb-0 {
   margin-bottom: 0px;
-}
-
-.mt-0 {
-  margin-top: 0px;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .mb-10 {
   margin-bottom: 2.5rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
-.mb-16 {
-  margin-bottom: 4rem;
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mt-10 {
   margin-top: 2.5rem;
-}
-
-.mb-14 {
-  margin-bottom: 3.5rem;
 }
 
 .block {
@@ -104,9 +80,9 @@
 }
 
 @font-face {
-  font-family: 'Aptos';
+  font-family: "Aptos";
 
-  src: url('./fonts/Aptos.ttf') format('truetype');
+  src: url("./fonts/Aptos.ttf") format("truetype");
 
   font-weight: 400;
 
@@ -116,9 +92,9 @@
 }
 
 @font-face {
-  font-family: 'Aptos';
+  font-family: "Aptos";
 
-  src: url('./fonts/Aptos-SemiBold.ttf') format('truetype');
+  src: url("./fonts/Aptos-SemiBold.ttf") format("truetype");
 
   font-weight: 500;
 
@@ -128,9 +104,9 @@
 }
 
 @font-face {
-  font-family: 'Aptos';
+  font-family: "Aptos";
 
-  src: url('./fonts/Aptos-Display-Bold.ttf') format('truetype');
+  src: url("./fonts/Aptos-Display-Bold.ttf") format("truetype");
 
   font-weight: 600;
 
@@ -140,9 +116,9 @@
 }
 
 @font-face {
-  font-family: 'Aptos';
+  font-family: "Aptos";
 
-  src: url('./fonts/Aptos-Black.ttf') format('truetype');
+  src: url("./fonts/Aptos-Black.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -152,9 +128,9 @@
 }
 
 @font-face {
-  font-family: 'Aptos';
+  font-family: "Aptos";
 
-  src: url('./fonts/Aptos-ExtraBold.ttf') format('truetype');
+  src: url("./fonts/Aptos-ExtraBold.ttf") format("truetype");
 
   font-weight: 900;
 
@@ -166,8 +142,10 @@
 :root {
   --color-lilac: rgb(112 48 160);
   --color-deep-purple: rgb(160 43 147);
+  --color-light-purple: rgb(216 110 204);
   --color-deep-turquoise: rgb(51 119 163);
   --color-blue-grayish: rgb(132 180 220);
+  --color-grey: rgb(75, 75, 75);
 }
 
 body {
@@ -178,10 +156,15 @@ html {
   scroll-behavior: smooth;
 }
 
+h3.slim {
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
 main {
   text-align: center;
   margin: auto;
-  max-width: 900px;
+  max-width: 990px;
   width: 100%;
 }
 
@@ -208,14 +191,38 @@ p {
   font-weight: 900;
 }
 
+.arrow-transition {
+  background-image: url(/images/arrow.png);
+  background-size: 2.1rem;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+  vertical-align: middle;
+  padding-left: 2.8rem;
+}
+
 hr.separator {
   border-top: 1px solid #bbb;
   margin: 3rem auto;
   opacity: 0.65;
 }
 
+ul.marked-list {
+  padding: 0 60px;
+}
+
+ul.marked-list li {
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  display: list-item;
+}
+
 .text-blue-grayish {
   color: var(--color-blue-grayish);
+}
+
+.text-grey {
+  color: var(--color-grey);
 }
 
 .text-lilac {
@@ -224,6 +231,10 @@ hr.separator {
 
 .text-deep-turquoise {
   color: var(--color-deep-turquoise);
+}
+
+.text-light-purple {
+  color: var(--color-light-purple);
 }
 
 .text-purple-native {
