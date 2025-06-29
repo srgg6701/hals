@@ -10,35 +10,76 @@
       .h1 {
         line-height: 1.75;
       }
+
       nav {
         margin-bottom: 0.45rem;
       }
+
       ul {
         list-style: none;
         margin: 1rem auto 0;
         padding: 0;
       }
+
       li {
         font-size: 1.25rem;
         display: inline-block;
         vertical-align: middle;
       }
+
       li a {
         color: var(--color-lilac);
         display: block;
         padding: 1rem 0.5rem;
         text-decoration: none;
       }
+
       li a:hover {
-        background-color: var(--color-lilac);
+        background-color: var(--color-deep-purple);
         color: #fff;
       }
+
+      .common-problems {
+        justify-content: space-evenly;
+        padding-bottom: 3.5rem;
+      }
+
+      .common-problems img {
+        margin-bottom: 1rem;
+        max-height: 85px;
+      }
+      .common-problems div {
+        font-size: 1.2rem;
+      }
+
+      .experts {
+        align-items: center;
+        display: flex;
+        vertical-align: middle;
+      }
+
+      .experts strong {
+        display: block;
+        line-height: 1.75;
+      }
+
+      .experts img {
+        float: left;
+        margin: 0.8rem 1rem auto;
+        max-width: 110px;
+      }
+
       .text-center.text-blue-grayish span {
         display: inline-block;
       }
+
       .text-center.text-blue-grayish span::first-letter {
         color: var(--color-deep-purple);
         font-weight: 900;
+      }
+      
+      .risks div {
+        width: 25%;
       }
     </style>
   </head>
@@ -46,13 +87,13 @@
     <main class="w-full">
       <header>
         <nav>
-          <ul>
-            <li>
+          <ul class="flex justify-between">
+            <li class="flex items-center">
               <img
                 src="./images/HALS-logo.png"
                 alt="HALS Logo"
                 class="logo"
-                style="margin-right: 1.25rem; max-width: 160px;"
+                style="margin-right: 1.25rem; max-width: 160px"
               />
             </li>
             <li>
@@ -72,55 +113,173 @@
             </li>
           </ul>
         </nav>
-        <div class="text-center text-blue-grayish" style="font-size: 1.2rem;">
+        <div class="text-center text-blue-grayish" style="font-size: 1.2rem">
           <span>Human-friendly</span>
           <span>Autonomous</span>
           SELF-<span>Learning</span>
           <span>Systems</span>
         </div>
       </header>
-      <hr class="separator" style="margin: 2.2rem auto;" />
-      <div class="flex items-center justify-center text-center" style="margin: 0 auto 1rem;">
-        <img style="max-width: 140px; margin-right: 0.8rem;" src="images/brainware.png" alt="BrainWare for Robotics and Autonomous Devices" />
-        <h1 class="text-left" style="font-weight: 400;">
-          <div>We Design <strong class="text-purple-native">BrainWare</strong></div>
-          <div style="padding-left: 1rem;">for <strong class="text-lilac">Robotics</strong> and</div>
+      <hr class="separator" style="margin: 2.2rem auto" />
+      <div
+        class="flex items-center justify-center text-center"
+        style="margin: 0 auto 1rem"
+      >
+        <img
+          style="max-width: 140px; margin-right: 0.8rem"
+          src="images/brainware.png"
+          alt="BrainWare for Robotics and Autonomous Devices"
+        />
+        <h1 class="text-left" style="font-weight: 400">
+          <div>
+            We Design <strong class="text-purple-native">BrainWare</strong>
+          </div>
+          <div style="padding-left: 1rem">
+            for <strong class="text-lilac">Robotics</strong>
+            and
+          </div>
           <div class="text-deep-turquoise font-bold">Autonomous Devices</div>
         </h1>
       </div>
       <div class="h1 text-3xl">
         <div>It Makes Them Reason</div>
-        <div class="text-purple-native">— Like <strong>Humans</strong> Do.</div>
+        <div class="text-purple-native">
+          — Like <strong>Humans</strong>
+          Do.
+        </div>
       </div>
       <figure>
-        <img src="images/sonny.png" style="margin: 1.3rem auto; max-width: 430px; width: 100%;" alt="">
+        <img
+          src="images/sonny.png"
+          style="margin: 1.3rem auto; max-width: 430px; width: 100%"
+          alt=""
+        />
       </figure>
-
       <hr class="separator" />
-
-      <h1 id="the-problem">The Problem</h1>
-      <h3>
-        <img src="images/robot-confusion.png" alt="Deep Learning Failure">
-        The systematic failure of current AI approaches to create provably intelligent systems.
+      <h1 id="the-problem" class="mb-0">The Problem</h1>
+      <h3 class="flex gap-4 items-center mt-0 mb-8">
+        <img
+          style="width: 100%; max-width: 205px"
+          src="images/robot-confusion.png"
+          alt="Deep Learning Failure"
+        />
+        <div class="text-left" style="line-height: 1.75">
+          The <span style="color: #f00">systematic failure</span> of current AI
+          approaches to create provably intelligent systems.
+        </div>
       </h3>
+      <div
+        class="flex gap-4 flex-wrap"
+        style="margin: auto; padding: 1.8rem; border: solid 3px #455b687d"
+      >
+        <div class="experts">
+          <img src="images/expert-gary-marcus.jpg" alt="" />
+          <p>
+            <strong>Gary Marcus:</strong> When billion-dollar AIs break down
+            over puzzles a child can do, it’s <b>time to rethink the hype</b>.
+          </p>
+        </div>
+        <div class="experts">
+          <img src="images/expert-yan-lecun.png" alt="" />
+          <p>
+            <strong>Yan LeCun:</strong> [LLMs] … don’t understand the physical
+            world, and <b>…cannot reason</b> in any reasonable definition of the term.
+          </p>
+        </div>
+        <div class="experts">
+          <img src="images/expert-judea-pearl.jpg" alt="" />
+          <p>
+            <strong>Judea Pearl:</strong> Even today’s most sophisticated
+            techniques of statistical ML can’t make the data tell us why. The
+            <b>missing ingredient is a "model of reality"…</b>
+          </p>
+        </div>
+      </div>
+      <h2 class="mb-10 mt-10">Common Problmes</h2>
+      <div class="flex common-problems gap-4">
+        <div>
+          <img src="images/problem-hallucinations.jpg" alt="Hallucinations" />
+          <div>Hallucinations</div>
+        </div>
+        <div>
+          <img src="images/problem-data-fragility.png" alt="Data Fragility" />
+          <div>Data Fragility</div>
+        </div>
+        <div>
+          <img src="images/problem-datasets.jpg" alt="Huge Datasets" />
+          <div>Huge Pretrained Models</div>
+        </div>
+      </div>
+      <div class="flex common-problems gap-4">
+        <div>
+          <img src="images/problem-costs.png" alt="Pretraining Costs" />
+          <div>Enormous Model Training Cost</div>
+        </div>
+        <div>
+          <img src="images/problem-blackbox.png" alt="Black Box" />
+          <div>Black Box Processing</div>
+        </div>
+        <div>
+          <img src="images/problem-no-alignment.png" alt="Alignment Problem" />
+          <div>No Consistent Approach to Alignment</div>
+        </div>
+      </div>
+      <h2 class="mt-0 mb-10"><span style="color: #f00">Risks</span> and <span style="color: darkorange">Long-Term Issues</span></h2>
+      <div class="flex items-center justify-center text-center gap-4 items-baseline risks">
+        <div>
+          <img src="images/risks-tech-failure.png" alt="Technical Failures" />
+          <p><strong>Technical Failurs</strong>
+            — the risk of AI systems failing in critical situations, leading to
+            potential harm or loss.
+          </p>
+        </div>
+        <div>
+          <img src="images/risks-investments-loss.png" alt="Investment Loss" />
+          <p><strong>Investment Loss</strong>
+            — the risk of significant financial losses due to the failure of AI
+            systems to deliver expected results or performance.
+          </p>
+        </div>
+        <div>
+          <img src="images/risks-distracting.png" alt="Distracting from alternative approaches" />
+          <p><strong>Distracting from alternative approaches</strong>
+            — the risk of focusing too much on current AI trends, potentially
+            overlooking more effective or innovative solutions.
+          </p>
+        </div>
+        <div>
+          <img src="images/risks-epistemological-corruption.png" alt="Epistemological Corruption" />
+          <p><strong>Epistemological Corruption</strong>
+            — the risk of AI systems distorting or misrepresenting knowledge,
+            leading to misinformation and misunderstanding.
+          </p>
+        </div>
+      </div>
+      <hr class="separator" />
       <h1 id="the-solution">The Solution</h1>
       <p>
-        HALS (Human-friendly Autonomous Learning Systems) is a revolutionary approach to AI that mimics human learning processes. By integrating sensorimotor experiences, HALS enables machines to learn and adapt in real-time, just like humans do.
+        HALS (Human-friendly Autonomous Learning Systems) is a revolutionary
+        approach to AI that mimics human learning processes. By integrating
+        sensorimotor experiences, HALS enables machines to learn and adapt in
+        real-time, just like humans do.
       </p>
       <h1 id="how-it-works">How it Works</h1>
       <p>
-        HALS combines advanced machine learning algorithms with a unique architecture that allows for continuous learning from sensory inputs. This system can process visual, auditory, and tactile data, enabling it to understand and interact with its environment in a human-like manner.
+        HALS combines advanced machine learning algorithms with a unique
+        architecture that allows for continuous learning from sensory inputs.
+        This system can process visual, auditory, and tactile data, enabling it
+        to understand and interact with its environment in a human-like manner.
       </p>
       <h1 id="how-it-appears">How it Appears</h1>
       <p>
-        HALS is designed to be user-friendly and intuitive. Its interface is visually appealing, with a clean layout and easy navigation. The system provides real-time feedback and insights, making it accessible for users of all technical levels.
+        HALS is designed to be user-friendly and intuitive. Its interface is
+        visually appealing, with a clean layout and easy navigation. The system
+        provides real-time feedback and insights, making it accessible for users
+        of all technical levels.
       </p>
       <h1 id="contacts">Contacts</h1>
-      <p>
-        For more information about HALS, please contact us at:
-      </p>
-      <p>Srgg: <a href="mailto:xyz@gmail.com">email</a>
-      </p>
-      </main>
+      <p>For more information about HALS, please contact us at:</p>
+      <p>Srgg: <a href="mailto:xyz@gmail.com">email</a></p>
+    </main>
   </body>
 </html>
