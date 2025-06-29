@@ -106,7 +106,9 @@
         margin-bottom: 2rem;
         width: 100%;
       }
-
+      .img-wrapper img:hover {
+        outline: solid 1px var(--color-deep-purple);
+      }
     </style>
   </head>
   <body>
@@ -123,16 +125,16 @@
               />
             </li>
             <li>
-              <a href="#the-problem">The Problem</a>
+              <a href="#the-problem">1. The Problem</a>
             </li>
             <li>
-              <a href="#the-solution">The Solution</a>
+              <a href="#the-solution">2. The Solution</a>
             </li>
             <li>
-              <a href="#how-it-works">How it Works</a>
+              <a href="#how-it-works">3. How it Works</a>
             </li>
             <li>
-              <a href="#how-it-appears">How it Appears</a>
+              <a href="#how-it-appears">4. How it Appears</a>
             </li>
             <li>
               <a href="#contacts">Contacts</a>
@@ -182,7 +184,7 @@
         />
       </figure>
       <hr class="separator" />
-      <h1 id="the-problem" class="mb-0">The Problem</h1>
+      <h1 id="the-problem" class="mb-0">1. The Problem</h1>
       <h3 class="flex gap-4 items-center mt-0 mb-8">
         <img
           style="width: 100%; max-width: 205px"
@@ -264,7 +266,7 @@
         <div>
           <img src="images/risks-tech-failure.png" alt="Technical Failures" />
           <p>
-            <strong>Technical Failurs</strong>
+            <strong>Technical Failures</strong>
             — the risk of AI systems failing in critical situations, leading to
             potential harm or loss.
           </p>
@@ -304,7 +306,7 @@
       <hr class="separator" />
 
       <h1 id="the-solution">
-        <span class="text-purple-native">The Solution</span>
+        <span class="text-purple-native">2. The Solution</span>
         <span class="text-deep-turquoise">Through Paradigm Change</span>
       </h1>
       <h3 class="slim text-lilac" style="margin-bottom: 3rem">
@@ -350,38 +352,106 @@
 
       <hr class="separator" />
 
-      <h1 id="how-it-works" class="text-purple-native">How it Works</h1>
+      <h1 id="how-it-works" class="text-purple-native">3. How it Works</h1>
       <img
         style="width: 100%; max-width: 700px"
         src="images/system-engineering-neuroscience.png"
         alt="System Engineering Powered by Neuroscience"
       />
 
-      <div class="flex flex-wrap justify-between items-center text-center how-it-works" style="margin: 2rem auto">
-        <div class="img-wrapper" style="width: 15.9%;">
-          <img src="images/how-it-works-1.png" alt="" />
+      <div
+        class="flex flex-wrap justify-between items-center text-center how-it-works"
+        style="margin: 2rem auto"
+      >
+        <div class="img-wrapper" style="width: 15.9%">
+          <img
+            class="cursor-pointer"
+            onclick="location.href='images/how-it-works-1.png'"
+            src="images/how-it-works-1.png"
+            alt=""
+          />
           Generates Real World Object Models from Sensory Data.
         </div>
-        <div class="img-wrapper" style="width: 26.3%;">
-          <img src="images/how-it-works-2.png" alt="" />
+        <div class="img-wrapper" style="width: 26.3%">
+          <img
+            class="cursor-pointer"
+            onclick="location.href='images/how-it-works-2.png'"
+            src="images/how-it-works-2.png"
+            alt=""
+          />
           Stores Knowledge in Distributed Communicating Cognitive Modules,
           Enabling Invariant Object Representations.
         </div>
-        <div class="img-wrapper" style="width: 26.5%;">
-          <img src="images/how-it-works-3.png" alt="" />
+        <div class="img-wrapper" style="width: 26.5%">
+          <img
+            class="cursor-pointer"
+            onclick="location.href='images/how-it-works-3.png'"
+            src="images/how-it-works-3.png"
+            alt=""
+          />
           Interacts with Objects Based on Existing Knowledge of Their Physical
           and Behavioral Properties.
         </div>
-        <div class="img-wrapper" style="width: 26.3%;">
-          <img src="images/how-it-works-4.png" alt="" />
+        <div class="img-wrapper" style="width: 26.3%">
+          <img
+            class="cursor-pointer"
+            onclick="location.href='images/how-it-works-4.png'"
+            src="images/how-it-works-4.png"
+            alt=""
+          />
           Accumulates Knowledge About Objects Through Interaction with the
           World, persistently increasing efficiency.
         </div>
       </div>
 
       <hr class="separator" />
-      
-      <h1 id="how-it-appears">How it Appears</h1>
+
+      <h2>Theoretical Basis and Implementation Means</h2>
+
+      <div class="mt-10 mb-0">
+        <div
+          class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
+        >
+          <!-- Thousand Brains -->
+          <div class="flex items-start gap-3 max-w-md">
+            <img
+              src="images/tbp-logo.jpg"
+              alt="Thousand Brains"
+              class="w-10 h-10 shrink-0"
+            />
+            <div class="text-sm leading-snug">
+              <p>
+                <strong class="text-black">Thousand Brains Theory</strong>
+                <span class="text-black">(Jeff Hawkins)</span>
+              </p>
+              <p class="whitespace-nowrap">
+                <span class="cursor-pointer" onclick="location.href='https://thousandbrainsproject.readme.io/docs'">Platform for Designing Sensorimotor AI</span> <a href="https://numenta.com">(Numenta)</a>
+              </p>
+            </div>
+          </div>
+          <!-- FAI2LCA -->
+          <div class="flex items-start gap-3 max-w-md">
+            <img
+              src="images/fai2lca-logo.png"
+              alt="FAI2LCA"
+              class="w-10 h-10 shrink-0"
+            />
+            <div class="text-sm leading-snug">
+              <p>
+                <strong class="text-black">FAI2LCA</strong>
+                <span class="text-black">(Sergei Klevtsov)</span>
+              </p>
+              <p class="text-purple-native">
+                Friendly AI Two-Level Cognitive Architecture
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="separator" />
+
+      <h1 id="how-it-appears">4. How it Appears</h1>
       <p>
         HALS is designed to be user-friendly and intuitive. Its interface is
         visually appealing, with a clean layout and easy navigation. The system
