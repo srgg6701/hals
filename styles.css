@@ -42,10 +42,30 @@
   font-display: swap;
 }
 
+:root {
+  --color-lilac: rgb(112 48 160);
+  --color-deep-purple: rgb(160 43 147);
+  --color-deep-turquoise: rgb(51 119 163);
+  --color-blue-grayish: rgb(132 180 220);
+}
+
 body {
   font-family: Aptos, Tahoma, Arial, serif;
 }
 
+main {
+  text-align: center;
+  margin: auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0.5rem auto;
+  text-align: left;
+}
 
 .aptos-semibold {
 	font-weight: 500;
@@ -63,22 +83,26 @@ body {
 	font-weight: 900;
 }
 
-
-main {
-  text-align: center;
-  margin: auto;
-  max-width: 900px;
-  width: 100%;
+hr.separator {
+  border: none;
+  border-top: 1px solid var(--color-blue-grayish);
+  margin: 3rem auto;
 }
 
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
+.text-blue-grayish {
+  color: var(--color-blue-grayish);
+}
+
+.text-lilac {
+  color: var(--color-lilac);
+}
+
+.text-deep-turquoise {
+  color: var(--color-deep-turquoise);
 }
 
 .text-purple-native {
-  --tw-text-opacity: 1;
-  color: rgb(160 43 147);
+  color: var(--color-deep-purple);
 }
 
 @media (min-width: 768px) {

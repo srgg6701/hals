@@ -5,49 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./dist/output.css" rel="stylesheet" />
     <title>HALS: Sensorimotor AI systems</title>
+    <style>
+      h1,
+      .h1 {
+        line-height: 1.75;
+      }
+      /* h1 span {
+        display: block;
+      } */
+      nav {
+        margin-bottom: 0.75rem;
+      }
+      ul {
+        list-style: none;
+        margin: 1rem auto 0;
+        padding: 0;
+      }
+      li {
+        font-size: 1.25rem;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      li a {
+        color: var(--color-lilac);
+        display: block;
+        padding: 1rem 0.5rem;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: var(--color-lilac);
+        color: #fff;
+      }
+      .text-center.text-blue-grayish span {
+        display: inline-block;
+      }
+      .text-center.text-blue-grayish span::first-letter {
+        color: var(--color-deep-purple);
+        font-weight: 900;
+      }
+    </style>
   </head>
   <body>
     <main class="w-full">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <!-- Левый верхний -->
-        <div class="flex flex-col items-center justify-center text-center">
-          <img src="image/logo-combined.png" style="width: 57%;" alt="HALS Logo" class="w-24 mb-2" />
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <img
+                src="./image/HALS-logo.png"
+                alt="HALS Logo"
+                class="logo"
+                style="margin-right: 1.25rem; max-width: 160px;"
+              />
+            </li>
+            <li>
+              <a href="#the-problem">The Problem</a>
+            </li>
+            <li>
+              <a href="#the-solution">The Solution</a>
+            </li>
+            <li>
+              <a href="#how-it-works">How it Works</a>
+            </li>
+            <li>
+              <a href="#how-it-appears">How it Appears</a>
+            </li>
+            <li>
+              <a href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="text-center text-blue-grayish" style="font-size: 1.2rem;">
+          <span>Human-friendly</span>
+          <span>Autonomous</span>
+          SELF-<span>Learning</span>
+          <span>Systems</span>
         </div>
-
-        <!-- Правый верхний -->
-        <div class="flex items-center justify-center">
-          <img
-            src="image/city.jpg"
-            alt="City Visualization"
-            class="max-w-full h-auto"
-          />
-        </div>
-
-        <!-- Левый нижний -->
-        <div class="flex items-center justify-center">
-          <img
-            src="image/sonny.jpg"
-            alt="Robot Face"
-            class="max-w-full h-auto"
-          />
-        </div>
-
-        <!-- Правый нижний -->
-        <div class="flex items-center justify-center text-center">
-          <p class="text-2xl text-purple-native leading-relaxed aptos-semibold">
-            Sensorimotor AI <span class="aptos-extra-bold">BrainWare</span>:<br />
-            From Autonomous Devices<br />
-            to Large-Scale <span class="aptos-extra-bold">AGI</span> Systems
-          </p>
-        </div>
+      </header>
+      <div class="flex items-center justify-center text-center" style="margin: 3.5rem auto 1rem;">
+        <img style="max-width: 140px; margin-right: 0.8rem;" src="image/brainware.png" alt="BrainWare for Robotics and Autonomous Devices" />
+        <h1 class="text-left">
+          <div>We Design <span class="text-purple-native">BrainWare</span></div>
+          <div style="padding-left: 1rem;">for <span class="text-lilac">Robotics</span> and</div>
+          <div class="text-deep-turquoise">Autonomous Devices</div>
+        </h1>
       </div>
-    </main>
-
-    <!-- <main>
-            <figure class="inline-block">
-                <h1 style="text-align: right; margin-bottom: 60px; font-size: 4rem; margin-right: -7rem;">Hello, World!</h1>
-                <img class="max-w-full" src="image/sonny.jpg">
-            </figure>
-        </main> -->
+      <div class="h1 text-3xl">
+        <div>It Makes Them Think</div>
+        <div>— Like Humans Do.</div>
+      </div>
+      <figure>
+        <img src="image/sonny.png" style="margin: 1.3rem auto; max-width: 430px; width: 100%;" alt="">
+      </figure>
+      <hr class="separator" />
+      <h1>The Problem</h1>
+      <p>
+        The world is full of complex, dynamic, and unpredictable environments. Traditional AI systems struggle to adapt to these conditions, often requiring extensive retraining or manual intervention.
+      </p>
+      <h1>The Solution</h1>
+      <p>
+        HALS (Human-friendly Autonomous Learning Systems) is a revolutionary approach to AI that mimics human learning processes. By integrating sensorimotor experiences, HALS enables machines to learn and adapt in real-time, just like humans do.
+      </p>
+      <h1>How it Works</h1>
+      <p>
+        HALS combines advanced machine learning algorithms with a unique architecture that allows for continuous learning from sensory inputs. This system can process visual, auditory, and tactile data, enabling it to understand and interact with its environment in a human-like manner.
+      </p>
+      <h1>How it Appears</h1>
+      <p>
+        HALS is designed to be user-friendly and intuitive. Its interface is visually appealing, with a clean layout and easy navigation. The system provides real-time feedback and insights, making it accessible for users of all technical levels.
+      </p>
+      <h1>Contacts</h1>
+      <p>
+        For more information about HALS, please contact us at:
+      </p>
+      <p>Srgg: <a href="mailto:xyz@gmail.com">email</a>
+      </p>
+      </main>
   </body>
 </html>
