@@ -93,6 +93,20 @@
       .approach-transition img {
         max-width: 100%;
       }
+
+      .how-it-works {
+        text-align: left;
+      }
+
+      .how-it-works .img-wrapper {
+        min-width: 160px;
+      }
+
+      .img-wrapper img {
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+
     </style>
   </head>
   <body>
@@ -336,13 +350,37 @@
 
       <hr class="separator" />
 
-      <h1 id="how-it-works">How it Works</h1>
-      <p>
-        HALS combines advanced machine learning algorithms with a unique
-        architecture that allows for continuous learning from sensory inputs.
-        This system can process visual, auditory, and tactile data, enabling it
-        to understand and interact with its environment in a human-like manner.
-      </p>
+      <h1 id="how-it-works" class="text-purple-native">How it Works</h1>
+      <img
+        style="width: 100%; max-width: 700px"
+        src="images/system-engineering-neuroscience.png"
+        alt="System Engineering Powered by Neuroscience"
+      />
+
+      <div class="flex flex-wrap justify-between items-center text-center how-it-works" style="margin: 2rem auto">
+        <div class="img-wrapper" style="width: 15.9%;">
+          <img src="images/how-it-works-1.png" alt="" />
+          Generates Real World Object Models from Sensory Data.
+        </div>
+        <div class="img-wrapper" style="width: 26.3%;">
+          <img src="images/how-it-works-2.png" alt="" />
+          Stores Knowledge in Distributed Communicating Cognitive Modules,
+          Enabling Invariant Object Representations.
+        </div>
+        <div class="img-wrapper" style="width: 26.5%;">
+          <img src="images/how-it-works-3.png" alt="" />
+          Interacts with Objects Based on Existing Knowledge of Their Physical
+          and Behavioral Properties.
+        </div>
+        <div class="img-wrapper" style="width: 26.3%;">
+          <img src="images/how-it-works-4.png" alt="" />
+          Accumulates Knowledge About Objects Through Interaction with the
+          World, persistently increasing efficiency.
+        </div>
+      </div>
+
+      <hr class="separator" />
+      
       <h1 id="how-it-appears">How it Appears</h1>
       <p>
         HALS is designed to be user-friendly and intuitive. Its interface is
