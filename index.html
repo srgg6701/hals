@@ -109,7 +109,106 @@
       .img-wrapper img:hover {
         outline: solid 1px var(--color-deep-purple);
       }
+      .marked-list.checkbox {
+        padding-right: 40px;
+      }
+      .marked-list.checkbox li span img {
+        margin: auto auto -0.55rem -0.2rem;
+      }
+      /**/
+      #videoModal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      #videoModalContent {
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        margin: 5% auto;
+        background: #fff;
+        padding: 1rem;
+      }
+
+      #videoModal iframe {
+        width: 100%;
+        height: 450px;
+      }
+
+      .close-button {
+        background: var(--color-grey);
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.5rem;
+        height: 2rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 2rem;
+      }
+
+      /* smooth scroll top */
+      #scrollToTop {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background-color: #444;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+
+      #scrollToTop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #scrollToTop:hover {
+        background-color: #666;
+      }
     </style>
+    <script>
+      function showVideoClip() {
+        const modal = document.getElementById("videoModal");
+        const iframe = document.getElementById("videoFrame");
+        iframe.src = "https://www.youtube.com/embed/LaAYuygr7_8";
+        modal.style.display = "block";
+      }
+
+      function closeVideoModal() {
+        const modal = document.getElementById("videoModal");
+        const iframe = document.getElementById("videoFrame");
+        iframe.src = ""; // Очистка iframe для остановки воспроизведения
+        modal.style.display = "none";
+      }
+
+      // close the modal when clicking outside of the video content
+      window.onclick = function (event) {
+        const modal = document.getElementById("videoModal");
+        if (event.target == modal) {
+          closeVideoModal();
+        }
+      };
+    </script>
   </head>
   <body>
     <main class="w-full">
@@ -125,28 +224,35 @@
               />
             </li>
             <li>
-              <a href="#the-problem">1. The Problem</a>
+              <a href="#the-problem">1 : The Problem</a>
             </li>
             <li>
-              <a href="#the-solution">2. The Solution</a>
+              <a href="#the-solution">2 : The Solution</a>
             </li>
             <li>
-              <a href="#how-it-works">3. How it Works</a>
+              <a href="#how-it-works">3 : How it Works</a>
             </li>
             <li>
-              <a href="#how-it-appears">4. How it Appears</a>
+              <a href="#how-it-appears">4 : How it Appears</a>
             </li>
             <li>
               <a href="#contacts">Contacts</a>
             </li>
           </ul>
         </nav>
-        <div class="text-center text-blue-grayish" style="font-size: 1.2rem">
+        <div
+          class="text-center inline-block text-blue-grayish"
+          style="font-size: 1.2rem"
+        >
           <span>Human-friendly</span>
           <span>Autonomous</span>
           SELF-<span>Learning</span>
           <span>Systems</span>
         </div>
+        <span style="color: #888; font-weight: 600"
+          ><span style="display: inline-block; padding: 0 1rem">::</span>
+          Deep-Tech Startup</span
+        >
       </header>
       <hr class="separator" style="margin: 2.2rem auto" />
       <div
@@ -323,30 +429,48 @@
         <img src="images/self-learning.png" width="420.86" alt="" />
       </div>
       <h3 class="slim" style="margin-top: 3rem">This approach ensures:</h3>
-      <ul class="marked-list">
+      <ul class="marked-list checkbox">
         <li>
           Elimination of the need for resource-hungry external datasets
-          <span class="arrow-transition">No Enormous External Costs</span>
+          <span class="arrow-transition"
+            >No Enormous External Costs
+            <img src="images/checkbox.svg" width="32px" alt=""
+          /></span>
         </li>
         <li>
           Dynamic adaptation to changes in the environment
-          <span class="arrow-transition">No Data Fragility</span>
+          <span class="arrow-transition"
+            >No Data Fragility
+            <img src="images/checkbox.svg" width="32px" alt=""
+          /></span>
         </li>
         <li>
           Semantic analysis of events and objects based on causality
-          <span class="arrow-transition">No Hallucinations</span>
+          <span class="arrow-transition"
+            >No Hallucinations
+            <img src="images/checkbox.svg" width="32px" alt=""
+          /></span>
         </li>
         <li>
           Continuous accumulation of knowledge about the world
-          <span class="arrow-transition">No Epistemological Corruption</span>
+          <span class="arrow-transition"
+            >No Epistemological Corruption
+            <img src="images/checkbox.svg" width="32px" alt=""
+          /></span>
         </li>
         <li>
           Transparency of the intentions and actions of AI ​​agent
-          <span class="arrow-transition">No Black Box Processing Issue</span>
+          <span class="arrow-transition"
+            >No Black Box Processing Issue
+            <img src="images/checkbox.svg" width="32px" alt=""
+          /></span>
         </li>
         <li>
           ​​Conditions for implementing alignment
-          <span class="arrow-transition">No Contradiction to Human Values</span>
+          <span class="arrow-transition"
+            >No Contradiction to Human Values
+            <img src="images/checkbox.svg" width="32px" alt=""
+          /></span>
         </li>
       </ul>
 
@@ -359,6 +483,69 @@
         alt="System Engineering Powered by Neuroscience"
       />
 
+      <hr class="separator" />
+
+      <h3 class="slim">How it Will Look in a Demo</h3>
+
+      <hr class="separator" />
+
+      <h4>1. Generating an Inner Model of the Environment</h4>
+      <div
+        class="flex flex-col sm:flex-row sm:items-start sm:justify-center"
+        style="gap: 38px"
+      >
+        <div style="max-width: 172px">
+          <img
+            style="max-width: 100%"
+            src="images/model-actual-reality.png"
+            alt=""
+          />
+        </div>
+        <div style="max-width: 398px">
+          <img style="max-width: 100%" src="images/model-stages.png" alt="" />
+        </div>
+      </div>
+      <h4 class="mt-10">2. Detecting a Reactive Object</h4>
+      <img
+        style="max-width: 700px; width: 100%"
+        src="images/detecting-reactive-object.png"
+        alt=""
+      />
+      <h3 style="margin: 3rem auto 1rem">Stages of Demo</h3>
+      <h4>Generating an Inner Model</h4>
+      <ol class="marked-list">
+        <li>An agent appears on the scene.</li>
+        <li>
+          The state of its memory can be observed, which should display a model
+          of its environment. At first, the memory is empty ("tabula rasa").
+        </li>
+        <li>
+          As the environment is investigated, objects present in this
+          environment begin to appear in the agent’s memory.
+        </li>
+      </ol>
+      <h4>Detecting a Reactive Object</h4>
+      <ol class="marked-list">
+        <li>The agent approaches an unknown object.</li>
+        <li>
+          When the distance between them decreases to a certain point, the
+          latter reacts to this approach (runs away)
+        </li>
+        <li>
+          Agent recognizes this behavior as attributed to "reactive" object.
+          That means that such an object may be alive.
+        </li>
+        <li>
+          Agent assignes special attributes to such an object, including
+          corresponding policies for safe interaction with it in the future.
+        </li>
+      </ol>
+
+      <hr class="separator" />
+
+      <h3 class="slim">What is Going on Behind the Scenes</h3>
+
+      <hr class="separator" />
       <div
         class="flex flex-wrap justify-between items-center text-center how-it-works"
         style="margin: 2rem auto"
@@ -404,40 +591,6 @@
         </div>
       </div>
 
-      <h2>How it Will Look in a Demo</h2>
-      <div
-        class="flex flex-col sm:flex-row sm:items-start sm:justify-center"
-        style="gap: 38px"
-      >
-        <div style="max-width: 180px">
-          <img
-            style="max-width: 100%"
-            src="images/model-actual-reality.png"
-            alt=""
-          />
-        </div>
-        <div style="max-width: 398px">
-          <img style="max-width: 100%" src="images/model-stages.png" alt="" />
-        </div>
-      </div>
-      <h3 style="margin: 3rem auto 1rem">Stages of Demo</h3>
-      <ol class="marked-list">
-        <li>An agent appears on the scene.</li>
-        <li>
-          The state of its memory can be observed, which should display a model
-          of its environment. At first, the memory is empty (“tabula rasa”).
-        </li>
-        <li>
-          As the environment is investigated, objects present in this
-          environment begin to appear in the agent’s memory.
-        </li>
-        <li>
-          The agent approaches a “reactive” object. When the distance between
-          them decreases to a certain point, the latter reacts to this approach
-          (runs away) and gets assigned special attributes and corresponding
-          policies for safe interaction with it in the future.
-        </li>
-      </ol>
       <hr class="separator" />
 
       <h2>Theoretical Basis and Implementation Means</h2>
@@ -487,7 +640,31 @@
           </div>
         </div>
       </div>
-
+      <div id="videoModal">
+        <div id="videoModalContent">
+          <span class="close-button" onclick="closeVideoModal()">&times;</span>
+          <iframe
+            id="videoFrame"
+            src=""
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <ul class="marked-list" style="margin-top: 1.5rem">
+        <li>
+          <span
+            style="
+              background-color: #eeeeff;
+              display: inline-block;
+              cursor: pointer;
+            "
+            onclick="showVideoClip()"
+            >More about Thousand Brains Theory</span
+          >
+          (the video of 3:50 will appear in a pop-up)
+        </li>
+      </ul>
       <hr class="separator" />
 
       <h1 id="how-it-appears">4. How it Appears in the Physical Environment</h1>
@@ -520,8 +697,8 @@
       <p>
         If a CR employs SLAM (Simultaneous Localization and Mapping) to
         construct maps, those maps are usually geometric. It can navigate all
-        premises and register constraints. However, to “view all objects from
-        all angles” for the semantic identification of a mark, it must
+        premises and register constraints. However, to "view all objects from
+        all angles" for the semantic identification of a mark, it must
         constantly run its object detection module on camera data.
       </p>
 
@@ -534,7 +711,7 @@
             <strong>Not robust to angles of view:</strong>
             The effectiveness of detecting objects (especially small details
             like tags) highly depends on the angle, lighting, and partial
-            occlusion. Even if it “looks” from all sides, the detector may fail
+            occlusion. Even if it "looks" from all sides, the detector may fail
             to identify a mark if it is seen from an unusual angle or partially
             blocked.
           </p>
@@ -549,11 +726,11 @@
         <li>
           <p>
             <strong>Lack of structural object understanding:</strong>
-            A CR does not build a 3D model of the object “on the fly” as HALS
-            does through reference frames. It merely attempts to “find” a known
+            A CR does not build a 3D model of the object "on the fly" as HALS
+            does through reference frames. It merely attempts to "find" a known
             template (mark) in 2D images or 3D data. If the mark is on a box
             edge that is currently hidden or partially blocked, the CR won’t
-            “decide” to go around the object to see other edges unless
+            "decide" to go around the object to see other edges unless
             explicitly instructed by a specific search strategy.
           </p>
         </li>
@@ -569,19 +746,19 @@
           based on space coverage (to build a complete geometric map).
           Purposeful search for visual marks on all surfaces of all objects is a
           highly complex task when it comes to programming effective CR
-          strategies. The CR may simply “scan” visible surfaces, and if the mark
+          strategies. The CR may simply "scan" visible surfaces, and if the mark
           is not in a good angle, it will miss it. To ensure that the CR
           accesses all surfaces of all objects, an exceptionally complex
           movement and inspection strategy would be required.
         </p>
         <p class="flex items-start gap-3 max-w-md">
-          <strong>HALS:</strong> Its drive to build a coherent model principle
-          means that it doesn’t merely cover space but attempts to understand
-          the structure of each object and the spatial arrangement of all
-          detected entities. When it builds an object model through reference
-          frames, it gradually gathers information about its various sides and
-          surfaces during the exploration process. Detecting a marked object
-          becomes a part of building the full model.
+          <strong class="text-purple-native">HALS:</strong> Its drive to build a
+          coherent model principle means that it doesn’t merely cover space but
+          attempts to understand the structure of each object and the spatial
+          arrangement of all detected entities. When it builds an object model
+          through reference frames, it gradually gathers information about its
+          various sides and surfaces during the exploration process. Detecting a
+          marked object becomes a part of building the full model.
         </p>
       </div>
 
@@ -592,14 +769,15 @@
         <p class="flex items-start gap-3 max-w-md">
           <strong>CR:</strong> If an object is partially obscured by items that
           are poorly recognized by CR detectors, these items may be treated as
-          “noise” or merged with the background. The CR may fail to separate the
+          "noise" or merged with the background. The CR may fail to separate the
           object from these interfering elements to analyze it in detail.
         </p>
         <p class="flex items-start gap-3 max-w-md">
-          <strong>HALS:</strong> By building the model on-the-fly, HALS tries to
-          analyze all observable entities in its perception. It models all
-          objects within sensor range, enabling semantic interpretation and
-          representing the object even when it is partially occluded by others.
+          <strong class="text-purple-native">HALS:</strong> By building the
+          model on-the-fly, HALS tries to analyze all observable entities in its
+          perception. It models all objects within sensor range, enabling
+          semantic interpretation and representing the object even when it is
+          partially occluded by others.
         </p>
       </div>
 
@@ -609,15 +787,15 @@
       >
         <p class="flex items-start gap-3 max-w-md">
           <strong>CR:</strong> Performs tasks based on predefined algorithms. It
-          lacks an internal “drive to understand”—that is, a cognitive mechanism
+          lacks an internal "drive to understand"—that is, a cognitive mechanism
           operating with general representations of semantic object boundaries.
         </p>
         <p class="flex items-start gap-3 max-w-md">
-          <strong>HALS:</strong> Constructs a coherent model of reality as its
-          higher-order goal. In this sense, the agent can be described as
-          intentional. The process of understanding is continuous, iteratively
-          refining its perception of the surrounding environment and the causes
-          within it.
+          <strong class="text-purple-native">HALS:</strong> Constructs a
+          coherent model of reality as its higher-order goal. In this sense, the
+          agent can be described as intentional. The process of understanding is
+          continuous, iteratively refining its perception of the surrounding
+          environment and the causes within it.
         </p>
       </div>
 
@@ -627,7 +805,7 @@
       </h3>
       <p>
         Theoretically, it is possible to program a CR to pursue its goal so
-        persistently that the behavior borders on “maniacal,” eventually leading
+        persistently that the behavior borders on "maniacal," eventually leading
         to a formal solution. For example, by using:
       </p>
       <ul class="marked-list">
@@ -667,7 +845,7 @@
         <li>
           <p>
             <strong>Computational resources:</strong>
-            Such a “maniacal” search involving video stream analysis, detector
+            Such a "maniacal" search involving video stream analysis, detector
             usage, and redundant trajectory planning would be extremely
             resource-heavy.
           </p>
@@ -675,7 +853,7 @@
         <li>
           <p>
             <strong>Execution time:</strong>
-            Searching “at any cost” may take excessive time, making it
+            Searching "at any cost" may take excessive time, making it
             impractical where speed matters.
           </p>
         </li>
@@ -690,7 +868,7 @@
         7. Fragility, Rigidity, and Complexity of Development and Maintenance
       </h3>
       <p>
-        Designing and debugging such a “maniacal” search strategy for CR is an
+        Designing and debugging such a "maniacal" search strategy for CR is an
         extremely difficult engineering challenge. Maintaining and updating this
         system would be a nightmare, since such a strategy must be
         custom-developed for a specific task configuration. Minor changes in the
@@ -698,17 +876,17 @@
         variations, or just a change in the mark color) may require a complete
         reprogramming or recalibration of the entire strategy.
       </p>
-      <h3>8. Harmful Side Effects of “Maniacal” Behavior</h3>
+      <h3>8. Harmful Side Effects of "Maniacal" Behavior</h3>
       <p>
-        In the real world, such a robot “obsessed” with finding a mark “at any
-        cost” may cause problems: block pathways, inefficiently use space, or
+        In the real world, such a robot "obsessed" with finding a mark "at any
+        cost" may cause problems: block pathways, inefficiently use space, or
         act unpredictably toward other agents (humans or robots).
       </p>
       <h3>9. Conclusion</h3>
       <p>
         Despite being aware of the target object, CR faces fundamental
         limitations in locating it, rooted in the rigidity of its search
-        strategy. Its ability to “see” the red mark depends on the quality of
+        strategy. Its ability to "see" the red mark depends on the quality of
         pre-trained detectors and its software’s computational capabilities, but
         not on any actual understanding of the surrounding world. Solving a task
         that is trivial for an agent capable of cognition requires enormous
@@ -727,39 +905,73 @@
 
       <hr class="separator" />
 
-      <h1 id="contacts" class="text-lilac" style="margin: 0 auto 2.5rem;">Contacts</h1>
+      <h1 id="contacts" class="text-lilac" style="margin: 0 auto 2.5rem">
+        Contacts
+      </h1>
 
       <div class="flex flex-col sm:flex-row sm:items-start sm:justify-center">
-      <p style="max-width: 260px; margin: 0;">
-        For more information on HALS or the pitch deck, please contact us at:
-        <a
-          href="mailto:&#115;&#114;&#103;&#103;&#54;&#55;&#48;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
-        >
-          &#115;&#114;&#103;&#103;&#54;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
-        </a>
-      </p>
-      <div style="max-width: 330px; vertical-align: top;">
-          <img style="max-height: 146px;" src="images/founder-srgg.png" alt="" />
-          <p>
-            <strong style="display: inline-block; text-align: center; width: 100%;">Sergei Klevtsov</strong>
-            <p style="padding-left: 3.4rem;">
-            Founder, Project Lead.
-            <br />
-            AI Researcher, System Architect. Over 15 years of Research and IT expertise.</p>
-          </p>
-        </div>
-        <div style="max-width: 330px; vertical-align: top;">
-          <img style="max-height: 146px;" src="images/founder-sergii.png" alt="" />
-          <p>
-            <strong style="display: inline-block; text-align: center; width: 100%;">Sergii Korobko</strong>
-            <p style="padding-left: 3.7rem;">
-              Co-founder, Technical Principal.
-            <br />
-            Software Architect. Over 20 years of IT expertise.
+        <p style="max-width: 260px; margin: 0">
+          For more information on HALS or the pitch deck, please contact us at:
+          <a
+            href="mailto:&#115;&#114;&#103;&#103;&#54;&#55;&#48;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
+          >
+            &#115;&#114;&#103;&#103;&#54;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
+          </a>
+        </p>
+        <div style="max-width: 330px; vertical-align: top">
+          <img style="max-height: 146px" src="images/founder-srgg.png" alt="" />
+          <div>
+            <strong
+              style="display: inline-block; text-align: center; width: 100%"
+              >Sergei Klevtsov</strong
+            >
+            <p style="padding-left: 3.4rem">
+              Founder, Project Lead.
+              <br />
+              AI Researcher, System Architect. Over 15 years of Research and IT
+              expertise.
             </p>
-          </p>
+          </div>
+        </div>
+        <div style="max-width: 330px; vertical-align: top">
+          <img
+            style="max-height: 146px"
+            src="images/founder-sergii.png"
+            alt=""
+          />
+          <div>
+            <strong
+              style="display: inline-block; text-align: center; width: 100%"
+              >Sergii Korobko</strong
+            >
+            <p style="padding-left: 3.7rem">
+              Co-founder, Technical Principal.
+              <br />
+              Software Architect. Over 20 years of IT expertise.
+            </p>
+          </div>
         </div>
       </div>
+      <button id="scrollToTop" title="Back to top">↑</button>
     </main>
+    <script>
+      const scrollBtn = document.getElementById("scrollToTop");
+      console.log("scrollBtn", scrollBtn);
+      scrollBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          console.log("showing scroll button");
+          scrollBtn.classList.add("show");
+        } else {
+          scrollBtn.classList.remove("show");
+        }
+      });
+    </script>
   </body>
 </html>
